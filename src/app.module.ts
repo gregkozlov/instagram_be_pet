@@ -4,21 +4,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
-import { User } from 'src/users/user.entity';
+import { AppDataSource } from 'src/data-source';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '5458',
-      database: 'inst_db',
-      // entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      entities: [User],
-      // synchronize creates tables automatically
-      synchronize: true,
+      ...AppDataSource.options,
     }),
     UsersModule,
   ],
