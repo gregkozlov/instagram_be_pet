@@ -1,0 +1,6 @@
+INSERT INTO users (id, username, email, password, bio, created_at)
+VALUES
+(uuid_generate_v4(), 'emma_writer', 'emma@example.com', 'hashedpassword7', 'Storyteller and novelist', NOW()),
+(uuid_generate_v4(), 'oliver_artist', 'oliver@example.com', 'hashedpassword8', 'Digital artist & painter', NOW()),
+(uuid_generate_v4(), 'lucas_music', 'lucas@example.com', 'hashedpassword9', 'Guitarist and music producer', NOW()),
+(uuid_generate_v4(), 'mia_teacher', 'mia@example.com', 'hashedpassword10', 'Passionate about education', NOW());

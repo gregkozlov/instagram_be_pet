@@ -1,3 +1,4 @@
+// users.controller.ts
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 
@@ -5,10 +6,17 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  // @Get()
+  // findAll() {
+  //   // return [];
+  //   return this.usersService.findAll();
+  // }
+
   @Get()
-  findAll() {
-    // return [];
-    return this.usersService.findAll();
+  async findAll() {
+    const users = await this.usersService.findAll();
+    console.log('Response:', users);
+    return users;
   }
 
   @Get(':id')
