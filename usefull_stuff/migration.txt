@@ -1,0 +1,5 @@
+npm run migration:generate --name=RenameBioToDescription
+
+npm run build
+
+npm run migration:run

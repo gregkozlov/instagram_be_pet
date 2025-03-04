@@ -9,18 +9,18 @@ import {
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id!: string; // UUID primary key
+  id!: string;
 
   @Column({ length: 50, unique: true })
-  username!: string; // Unique username
+  username!: string;
 
   @Column({ length: 100, unique: true })
-  email!: string; // Unique email
+  email!: string;
 
   @Column({ length: 255 })
-  password!: string; // Hashed password
+  password!: string;
 
-  @Column({ type: 'text', nullable: true }) // Bio is optional
+  @Column({ type: 'text', nullable: true })
   bio?: string;
 
   @CreateDateColumn({ name: 'created_at' })
